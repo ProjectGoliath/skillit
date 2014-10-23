@@ -4,9 +4,9 @@ If you want to see a preview of this product on your computer (localhost)...
 
 Download files into your computer and put it in a folder named, "Skillit".
 
-Terminal
-Change directory to your folder (Skillit)
-type: python -m SimpleHTTPServer
+Terminal<br>
+Change directory to your folder (Skillit)<br>
+type: python -m SimpleHTTPServer<br>
 Now your http server will start in port 8000
 
 On your web browser, type this into the URL: http://localhost:8000/
