@@ -53,23 +53,29 @@
   }
 
   // 2. Runs when the viewer has authenticated
-  function onLinkedInAuth() {
-    IN.API.Profile("me").fields("firstName", "lastName", "headline", "industry", "skills").result(displayProfiles);
+  function onLinkedInAuth() {//gathers data
+    IN.API.Profile("me").fields("firstName", "lastName", "headline", "industry", "skills", "lastModifiedTimestamp", "positions", "interests", "following", "network", "jobBookmarks", "suggestions", "dateOfBirth", "connections", "groupMemberships")
+    .result(displayProfiles)
+    .error(displayProfilesErrors);
     
     
     
     //IN.API.Profile("12345").fields(["firstName","headline"]).result(function(result) {alert JSON.stringify(result)) json stringify
     }
-  }
+  
 
   // 2. Runs when the Profile() API call returns successfully
   function displayProfiles(profiles) {
   	console.log(profiles);
     member = profiles.values[0];
     document.getElementById("profiles").innerHTML = 
-      "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + "</p>"
-      +"<br>" + member.headline;
+      "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + "</p>";
   }
+  
+  //runs when an error occurs
+  function displayProfilesErrors(error) {
+  console.log(error);
+	}
 	</script>
     
 
@@ -89,10 +95,12 @@
             <p>Discover new events, meetups, books, courses, and content to reach your career goals</p>
             <!--<p><a class="btn btn-primary btn-large" href="javascript:connectLinkedInUser()" target="_blank">Let's Get Started</a>-->
             <p>
+            
+            <div id ="profiles">
             <script type="in/Login">
 			</script>
             </p>
-            <div id ="profiles"></div>
+            </div>
         </header>
 
         <hr>
