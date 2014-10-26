@@ -42,7 +42,7 @@ function reqAccessToken()
 	+"&client_secret=" + secretKey;
 	
 	
-	
+
 	
 	
 	// var xhr = new XMLHttpRequest();
@@ -58,8 +58,69 @@ function reqAccessToken()
       //alert("Data: " + data + "\nStatus: " + status);
     //});
 	
-
-	
-	
-
 }
+
+	//CORS
+	// Create the XHR object.
+	function createCORSRequest(method, url) {
+	  var xhr = new XMLHttpRequest();
+	  if ("withCredentials" in xhr) {
+		// XHR for Chrome/Firefox/Opera/Safari.
+		xhr.open(method, url, true);
+	  } else if (typeof XDomainRequest != "undefined") {
+		// XDomainRequest for IE.
+		xhr = new XDomainRequest();
+		xhr.open(method, url);
+	  } else {
+		// CORS not supported.
+		xhr = null;
+	  }
+	  return xhr;
+	}
+
+	// Helper method to parse the title tag from the response.
+	function getTitle(text) {
+	  return text.match('<title>(.*)?</title>')[1];
+	}
+
+	// Make the actual CORS request.
+	function makeCorsRequest() {
+	  
+	  //parsing URL params
+	var params = location.search.split("&");
+	var authCodeString = params[0];
+	var authCodeS = authCodeString.split("=");
+	
+	//saves authorization code to global variable
+	authCode = authCodeS[1];
+	console.log("authorization code: " + authCode); //prints authCode into console
+	
+	
+	request_access_token_uri = "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
+	+"&code=" + authCode 
+	+"&redirect_uri=" + redirect
+	+"&client_id=" + apiKey
+	+"&client_secret=" + secretKey;
+	  
+
+	  var xhr = createCORSRequest('POST', request_access_token_uri);
+	  if (!xhr) {
+		alert('CORS not supported');
+		return;
+	  }
+
+	  // Response handlers.
+	  xhr.onload = function() {
+		var text = xhr.responseText;
+		var title = getTitle(text);
+		alert('Response from CORS request to ' + url + ': ' + title);
+		
+	  };
+
+	  xhr.onerror = function() {
+		alert('Woops, there was an error making the request.');
+	  };
+
+	  xhr.send();
+	  console.log(xhr.status);
+	}
