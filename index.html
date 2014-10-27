@@ -36,8 +36,16 @@
     $(function(){
       $("#navbar").load("header.html"); 
     });
+    
+    $(function(){
+      $("#product_features").load("product_features.html"); 
+    });
+    
     </script>
-    <!--<script src="js/OAuth.js"></script>-->
+    
+    
+    <!--<script src="js/OAuth.js"></script>   
+    deprecated-->
     
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
   	api_key: 75l45q2keur3cw
@@ -54,7 +62,7 @@
 
   // 2. Runs when the viewer has authenticated
   function onLinkedInAuth() {//gathers data
-    IN.API.Profile("me").fields("firstName", "lastName", "headline", "industry", "skills", "lastModifiedTimestamp", "positions", "interests", "following", "network", "jobBookmarks", "suggestions", "dateOfBirth", "connections", "groupMemberships")
+    IN.API.Profile("me").fields("firstName", "lastName", "headline", "industry", "skills", "location", "lastModifiedTimestamp", "positions", "interests", "following", "network", "suggestions", "dateOfBirth", "connections")
     .result(displayProfiles)
     .error(displayProfilesErrors);
     
@@ -69,7 +77,8 @@
   	console.log(profiles);
     member = profiles.values[0];
     document.getElementById("profiles").innerHTML = 
-      "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + "</p>";
+      "<p id=\"greeting" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + "</p>";
+    
   }
   
   //runs when an error occurs
@@ -77,6 +86,8 @@
   console.log(error);
 	}
 	</script>
+	
+	<script src="js/secret_sauce.js"></script>
     
 
 </head>
@@ -113,59 +124,9 @@
         <!-- /.row -->
 
         <!-- Page Features -->
-        <div class="row text-center">
+        <div id="product_features" class="row text-center">
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Courses</h3>
-                        <p>Build new skills!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Books</h3>
-                        <p>Acquire knowledge!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Events & Meetups</h3>
-                        <p>Network to get ahead!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Videos</h3>
-                        <p>Stop and Watch!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
         <!-- /.row -->
