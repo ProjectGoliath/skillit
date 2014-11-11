@@ -22,13 +22,35 @@
     <div class="container">
       <a href="#" class="brand-logo">Skillit</a>
       <ul class="right side-nav">
-        <li><a class=" tooltipped hint--bottom" data-hint="Learn more about what we do" href="about.html">About</a></li>
-        <li><a class=" tooltipped hint--bottom" data-hint="We do not misuse or sell your data" href="privacy.html">Privacy Policy</a></li>
-        <li><a class=" tooltipped hint--bottom" data-hint="Let us know what you think" href="contact.html">Contact</a></li>
+        <li><a class="tooltipped hint--bottom modal-trigger" data-hint="Learn more about what we do"href="#modal_about">About</a></li>
+        <li><a class="tooltipped hint--bottom modal-trigger" data-hint="We do not misuse or sell your data" href="#modal_privacy">Privacy Policy</a></li>
+        <li><a class="tooltipped hint--bottom modal-trigger" data-hint="Let us know what you think" href="#modal_contact">Contact</a></li>
       </ul>
       <a class="button-collapse" href="#" data-activates='nav-mobile'><i class="entypo list"></i></a>
     </div>
   </nav>
+
+  <!-- About modal -->
+  <div id="modal_about" class="modal">
+    <h4>About</h4>
+    <p>Hello there! Welcome to Skillit. Unfortunately, we're still in development so please be patient with us!</p>
+    <p>Skillit helps students and professionals discover new courses so that they can improve themselves. Think of it as the Pandora for courses. All we need is for your to connect your LinkedIn profile and our algorithm will take care of the rest.</P>
+    <p>Our mission is simple. It's scary preparing yourself in the job world. Sometimes you need a hand, and that's why we're here. We want to provide you with the resources so you can succeed, whatever that may be and wherever you may be in your career trajectory.</p>
+    <a href="#" class="waves-effect button flat modal_close">Close</a>
+  </div>
+
+  <!-- Privacy modal -->
+  <div id="modal_privacy" class="modal">
+    <h4>Privacy Policy</h4>
+    <p>By now I bet you're skeptical if you trust us to give us your information. Our values are clear: we do not !@#$ with the user. We do not sell or misuse your data in any way. All we do is take your LinkedIn information and try to recommend you content that we think you may be interested in. That is all.</p>
+    <a href="#" class="waves-effect button flat modal_close">Close</a>
+  </div>
+
+  <!-- Contact modal -->
+  <div id="modal_contact" class="modal">
+    <h4>Feel free to <a href="mailto:andalau@gmail.com?Subject=Hello there!" target="_blank">email</a> me</h4>
+    <a href="#" class="waves-effect button flat modal_close">Close</a>
+  </div>
 
   <!--main header, copy, and CTA-->
   <div class="section" id="index-banner">
@@ -47,10 +69,10 @@
   </div>
 
 
-  <!--detailed benefits section-->
+  <!--detailed benefits section yet to come-->
 
 
-  <!--scripts, need to put here for animations to work-->
+  <!--scripts, need to put down here in the document for them to work-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js">
   </script>
   <script src="js/jquery.easing.1.3.js"></script>
