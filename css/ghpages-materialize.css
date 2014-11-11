@@ -4424,7 +4424,7 @@ ul.tabs .indicator {
   display: none;
   background-color: #eee;
   padding: 24px;
-  max-width: 60%;
+  max-width: 50%;
 }
 .modal h1, .modal h2, .modal h3, .modal h4 {
   margin-top: 0;
