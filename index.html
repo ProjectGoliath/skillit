@@ -1,189 +1,73 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <title>Skillit Materialize</title>
 
-    <title>Skillit</title>
+  <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <link href="css/prism.css" rel="stylesheet" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/heroic-features.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- page scripts -->
-    <script>
-    $(function(){
-      $("#navbar").load("header.html"); 
-    });
-    </script>
-    <!--<script src="js/OAuth.js"></script>-->
-    
-    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-  	api_key: 75l45q2keur3cw
-  	onLoad: onLinkedInLoad
-  	authorize: true
-	</script>
-    
-    
-	<script type="text/javascript">
-  // 2. Runs when the JavaScript framework is loaded
-  function onLinkedInLoad() {
-    IN.Event.on(IN, "auth", onLinkedInAuth);
-  }
-
-  // 2. Runs when the viewer has authenticated
-  function onLinkedInAuth() {//gathers data
-    IN.API.Profile("me").fields("firstName", "lastName", "headline", "industry", "skills", "lastModifiedTimestamp", "positions", "interests", "following", "network", "jobBookmarks", "suggestions", "dateOfBirth", "connections", "groupMemberships")
-    .result(displayProfiles)
-    .error(displayProfilesErrors);
-    
-    
-    
-    //IN.API.Profile("12345").fields(["firstName","headline"]).result(function(result) {alert JSON.stringify(result)) json stringify
-    }
   
-
-  // 2. Runs when the Profile() API call returns successfully
-  function displayProfiles(profiles) {
-  	console.log(profiles);
-    member = profiles.values[0];
-    document.getElementById("profiles").innerHTML = 
-      "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + "</p>";
-  }
   
-  //runs when an error occurs
-  function displayProfilesErrors(error) {
-  console.log(error);
-	}
-	</script>
-    
-
+  
 </head>
 
 <body>
 
-    <!-- navigation bar -->
-    <div id ="navbar"></div>
-
-    <!-- Page Content -->
+  <!--navigation bar-->
+  <nav id="front-page-nav">
     <div class="container">
-
-        <!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-            <h1>Don't Fall Behind</h1>
-            <p>Discover new events, meetups, books, courses, and content to reach your career goals</p>
-            <!--<p><a class="btn btn-primary btn-large" href="javascript:connectLinkedInUser()" target="_blank">Let's Get Started</a>-->
-            <p>
-            <div id ="profiles"><script type="in/Login"></script></div>
-            </p>
-        </header>
-
-        <hr>
-
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3 id="next">Choose your next activity</h3>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
-        <div class="row text-center">
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Courses</h3>
-                        <p>Build new skills!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Books</h3>
-                        <p>Acquire knowledge!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Events & Meetups</h3>
-                        <p>Network to get ahead!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Videos</h3>
-                        <p>Stop and Watch!</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Let's go!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Skillit 2014</p>
-                </div>
-            </div>
-        </footer>
-
+      <a href="#" class="brand-logo">Skillit</a>
+      <ul class="right side-nav">
+        <li><a class=" tooltipped hint--bottom" data-hint="Learn more about what we do" href="about.html">About</a></li>
+        <li><a class=" tooltipped hint--bottom" data-hint="We do not misuse or sell your data" href="privacy.html">Privacy Policy</a></li>
+        <li><a class=" tooltipped hint--bottom" data-hint="Let us know what you think" href="contact.html">Contact</a></li>
+      </ul>
+      <a class="button-collapse" href="#" data-activates='nav-mobile'><i class="entypo list"></i></a>
     </div>
-    <!-- /.container -->
+  </nav>
 
-    
+  <!--main header, copy, and CTA-->
+  <div class="section" id="index-banner">
+    <div class="container">
+      <h1 class="header row center">Discover New Courses Instantly</h1>
+      <div class="row center">
+        <h4 class="header col s12 light center">Build skills and don't fall behind in the game</h4>
+      </div>
+      <div class="row center" >
+        <a href="#" id="download-button" class="button thick raised waves-effect waves-light" onclick="toast('Coming soon', 2000)">Start Improving</a>
+      </div>
+      <div class="row center orange-text lighten-4">
+        Connect your LinkedIn profile in one click to match results
+      </div>
+    </div>
+  </div>
+
+
+  <!--detailed benefits section-->
+
+
+  <!--scripts, need to put here for animations to work-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js">
+  </script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/waves.js"></script>
+  <script src="js/prism.js"></script>
+  <script src="js/toasts.js"></script>
+  <script src="js/tooltip.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/dropdown.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/leanModal.js"></script>
+  <script src="js/collapsible.js"></script>
+  <script src="js/materialbox.js"></script>
+  <script src="js/scrollspy.js"></script>
+  <script src="js/sideNav.js"></script>
+  <script src="js/init.js"></script>
 
 
 </body>
-
 </html>
