@@ -20,17 +20,17 @@ function launchParticlesJS(tag_id, params){
 			opacity: 1,
 			size: 2.5,
 			size_random: true,
-			nb: 200,
+			nb: 300,
 			line_linked: {
 				enable_auto: true,
 				distance: 100,
-				color: '#fff',
+				color: '#EE6843',
 				opacity: 1,
 				width: 1,
 				condensed_mode: {
 					enable: true,
-					rotateX: 65000,
-					rotateY: 65000
+					rotateX: 600,
+					rotateY: 600
 				}
 			},
 			anim: {

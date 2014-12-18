@@ -1,0 +1,12 @@
+html,body{ 
+  margin:0;
+}
+
+canvas{
+	display:block;
+	vertical-align:bottom;
+}
+#particles-js{
+  height:40%;
+  background:#fff
+}
