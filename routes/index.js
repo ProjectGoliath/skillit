@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Skillit' });
 });
 
-
 /* GET secret page. */
 router.get('/hiddenLeaf', function(req, res, next) {
     res.render('hiddenVillage', { title: 'Konoha' });
