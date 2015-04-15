@@ -1,5 +1,10 @@
 extends layout
 block content
-    h1= title
-    p Welcome to The Hidden Leaf Village, #{title}!
-    p Site created by the following Genin: Andy Laumaru, Anthony Chanchan, Anthony Maosan
+	include navbar.jade
+	.section
+		.container
+			.header.row
+				h1= title
+				p Welcome! You discovered our little easter egg to The Hidden Leaf Village, #{title}!
+				p Site created by the following Genin: Andy Laumaru, Anthony Chanchan, Anthony Maosan
+	include footer.jade

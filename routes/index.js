@@ -11,4 +11,8 @@ router.get('/hiddenLeaf', function(req, res, next) {
     res.render('hiddenVillage', { title: 'Konoha' });
 });
 
+router.get('/team', function(req, res, next) {
+    res.render('team', { title: 'Team' });
+});
+
 module.exports = router;
