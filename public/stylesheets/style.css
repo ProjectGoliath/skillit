@@ -10,7 +10,7 @@ a {
 .landing-background {
 	background-image: url('../images/sky_beach.jpg');
 	width: 100%;
-	height: 900px;
+	height: 800px;
 	background-position: bottom;
 	background-size: cover;
 }
