@@ -19,8 +19,8 @@ a {
 .image {
   font-size: 0;
   text-align: center;
-  width: 264px;  /* Container's dimensions */
-  height: 198px;
+  width: 320px;  /* Container's dimensions */
+  height: 213px;
 }
 img {
   display: inline-block;
@@ -31,5 +31,5 @@ img {
 .trick {
   display: inline-block;
   vertical-align: middle;
-  height: 198px;
+  height: auto;
 }
