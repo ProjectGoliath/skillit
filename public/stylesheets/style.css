@@ -15,3 +15,21 @@ a {
 	background-position: center bottom;
 	background-size: cover;
 }
+
+.image {
+  font-size: 0;
+  text-align: center;
+  width: 264px;  /* Container's dimensions */
+  height: 198px;
+}
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 100%;
+  max-width: 100%;
+}
+.trick {
+  display: inline-block;
+  vertical-align: middle;
+  height: 198px;
+}
