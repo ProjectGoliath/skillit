@@ -16,20 +16,3 @@ a {
 	background-size: cover;
 }
 
-.image {
-  font-size: 0;
-  text-align: center;
-  width: 320px;  /* Container's dimensions */
-  height: 213px;
-}
-img {
-  display: inline-block;
-  vertical-align: middle;
-  max-height: 100%;
-  max-width: 100%;
-}
-.trick {
-  display: inline-block;
-  vertical-align: middle;
-  height: auto;
-}
